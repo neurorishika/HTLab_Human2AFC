@@ -1,0 +1,99 @@
+/* EXPERIMENT CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+/* Add background color for the body and set a default font, size and color */
+body {
+    background-color: #f1f1f1;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+
+/* Scoreboard */
+#scoreboard {
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Left and right buttons in their default, chosen and disabled state */
+.button {
+    background-color: #eeeeee;
+    border: 2px solid #000000;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Add two variations on the disabled state, one for chosen and one for not chosen */
+.button-disabled:not(.button-chosen){
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.button-disabled.button-chosen.button-none{
+    background-color: #993316;
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
+.button-disabled.button-chosen.button-low{
+    background-color: #e5ba1e;
+    color: #000000;
+    cursor: not-allowed;
+}
+
+.button-disabled.button-chosen.button-med{
+    background-color: #cadd22;
+    color: #000000;
+    cursor: not-allowed;
+}
+.button-disabled.button-chosen.button-high{
+    background-color: #078300;
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
+
+#left {
+    float:left;
+    width:49%;
+    height:100pt;
+}
+
+#right {
+    float:right;
+    width:49%;
+    height:100pt;
+}
+
+/* Add a button classes for the two options when not disabled */
+.button-A:not(.button-disabled) {
+    background-color: #a7b0ff;
+}
+
+.button-B:not(.button-disabled) {
+    background-color: #f69b9b;
+}
+
+/* Add a background color on hover when the buttons are not disabled */
+.button-A:hover:not(.button-disabled) {
+    background-color: #6370e8;
+}
+
+.button-B:hover:not(.button-disabled) {
+    background-color: #da5454;
+}
+
+#header {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}

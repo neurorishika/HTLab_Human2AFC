@@ -1,0 +1,40 @@
+<!-- This is the home page for the 2AFC experiment. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Unique ID</title>
+    <!-- Add all relevant meta tags here -->
+    <meta name="description" content="Hermundstad-Turner 2AFC Challenge 2023">
+    <meta name="keywords" content="2AFC, HHMI Janelia, Challenge, Decision Making, Human Behavior">
+    <meta name="author" content="Tzuhsuan Ma, Rishika Mohanta, Turner Lab, Hermundstad Lab">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add all relevant links here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Add all relevant scripts here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Add all relevant stylesheets here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Add all relevant scripts here -->
+    <!-- None -->
+</head>
+<body>
+    <div>
+        <center>
+            <!-- Create a header div to hold the header with logo and title -->
+            <div id="header">
+                <a href="https://www.janelia.org/" target="_blank"><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" id="logo" height="60px"></a>
+                <h1 id="title">Thank you for participating in the Hermundstad-Turner 2AFC Challenge 2023!</h1>
+            </div>
+            
+            <br><br><br>
+
+            <h2 >{{ message }}</h2>
+            <br><br><br>
+            <h3>{{ addl_message|safe }} You can exit by clicking <a href='/login'>here</a>.</h3>
+        </center>
+    </div>
+</body>
+</html>

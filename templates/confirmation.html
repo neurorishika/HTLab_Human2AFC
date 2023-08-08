@@ -1,0 +1,56 @@
+<!-- This is the home page for the 2AFC experiment. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Unique ID</title>
+    <!-- Add all relevant meta tags here -->
+    <meta name="description" content="Hermundstad-Turner 2AFC Challenge 2023">
+    <meta name="keywords" content="2AFC, HHMI Janelia, Challenge, Decision Making, Human Behavior">
+    <meta name="author" content="Tzuhsuan Ma, Rishika Mohanta, Turner Lab, Hermundstad Lab">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add all relevant links here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Add all relevant scripts here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Add all relevant stylesheets here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Add all relevant scripts here -->
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("copy");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+            alert("Copied the confirmation code to your clipboard. Please provide this code to the experimenter to receive your reward.");
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <center>
+            <!-- Create a header div to hold the header with logo and title -->
+            <div id="header">
+                <a href="https://www.janelia.org/" target="_blank"><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" id="logo" height="60px"></a>
+                <h1 id="title">Thank you for participating in the Hermundstad-Turner 2AFC Challenge 2023!</h1>
+            </div>
+            
+            <br><br><br>
+
+            <h2 >
+                Your confirmation code is given below: <br>
+                <input type="text" value="{{ confirmation }}" id="copy" readonly style="width:100%;text-align:center;font-size:20px;"><br>
+                Click the button below to copy the code to your clipboard.
+            </h2>
+            <button onclick="copyToClipboard()">Copy</button>
+            <br>
+            <h2 >Please provide this code to the experimenter to receive your reward.</h2>
+            <br><br><br>
+            <h3>For an additional bonus, you can participate in more than one session as long as new experiments are available. </h3>
+            <h3>In order to start a new experiment, please click <a href='/login?uniqueID={{ id }}'>here</a> or click <a href='/login'>here</a> to return to leave the experiment.</h3>
+        </center>
+    </div>
+</body>
+</html>

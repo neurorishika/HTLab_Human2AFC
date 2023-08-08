@@ -1,0 +1,68 @@
+<!--This is the actual experiment page that uses AJAX to communicate with the server and run a 2AFC experiment.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>2AFC Experiment</title>
+    <!-- Add all relevant meta tags here -->
+    <meta name="description" content="Hermundstad-Turner 2AFC Challenge 2023">
+    <meta name="keywords" content="2AFC, HHMI Janelia, Challenge, Decision Making, Human Behavior">
+    <meta name="author" content="Tzuhsuan Ma, Rishika Mohanta, Turner Lab, Hermundstad Lab">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add all relevant links here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Add all relevant scripts here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Add all relevant stylesheets here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='experiment.css') }}">
+    <!-- Add all relevant scripts here -->
+    <script src="{{ url_for('static', filename='experiment.js') }}"></script>
+</head>
+<body>
+    <div>
+        <center>
+            <!-- Create a header div to hold the header with logo and title -->
+            <div id="header">
+                <a href="https://www.janelia.org/" target="_blank"><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" id="logo" height="60px"></a>
+                <h1 id="title">Welcome to the Hermundstad-Turner 2AFC Challenge 2023</h1>
+            </div>
+            
+            <br><br><br>
+            
+            <!--Scoreboard to show Points and current trial number-->
+            <p id = "scoreboard">
+                 <b> Trial #: </b>
+                <span id="trial">0</span>
+                <b> | Score: </b>
+                <span id="points">0</span>
+                <b> | Net Winnings: </b> $
+                <span id="winnings">0</span>
+            </p>
+
+            <!-- Left and Right Buttons -->
+            <div id="left">
+                <button id="left_button" class="button", onclick="left_button_click()">
+                    <span id="left_string"><b></b></span>
+                </button>
+            </div>
+
+            <div id="right">
+                <button id="right_button" class="button", onclick="right_button_click()">
+                    <span id="right_string"><b></b></span>
+                </button>
+            </div>
+            <!-- Add a stop button anchored to the bottom of the page -->
+            <a href='/logout'>
+                <button id="stop_button" style="position:absolute;bottom:5%;left:5%;width:90%;height:50pt;font-size:20pt;background-color:#e31e1e;color:white;">
+                    <span id="stop_string"><b>Stop Experiment</b></span>
+                </button>
+            </a>
+
+        </center>
+    </div>
+</body>
+</html>

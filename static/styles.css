@@ -1,0 +1,45 @@
+/* Styles CSS */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+body {
+    background-color: #f2f2f2;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+button{
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: darkseagreen;
+    color: black;
+}
+
+button:hover{
+    background-color: #078300;
+    color: white;
+}
+
+p{
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.5;
+    width:60%;
+    font-size:10pt;
+}
+
+#header {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    width: 60%;
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

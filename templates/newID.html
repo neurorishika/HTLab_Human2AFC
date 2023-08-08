@@ -1,0 +1,53 @@
+<!-- This is the home page for the 2AFC experiment. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Unique ID</title>
+    <!-- Add all relevant meta tags here -->
+    <meta name="description" content="Hermundstad-Turner 2AFC Challenge 2023">
+    <meta name="keywords" content="2AFC, HHMI Janelia, Challenge, Decision Making, Human Behavior">
+    <meta name="author" content="Tzuhsuan Ma, Rishika Mohanta, Turner Lab, Hermundstad Lab">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add all relevant links here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Add all relevant scripts here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Add all relevant stylesheets here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Add all relevant scripts here -->
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("copy");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+            alert("Copied the Unique ID: " + copyText.value + " to clipboard");
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <center>
+            <!-- Create a header div to hold the header with logo and title -->
+            <div id="header">
+                <a href="https://www.janelia.org/" target="_blank"><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" id="logo" height="60px"></a>
+                <h1 id="title">Welcome to the Hermundstad-Turner 2AFC Challenge 2023</h1>
+            </div>
+            
+            <br><br><br>
+
+            <h2 >Your new unique ID is: 
+                <input type="text" id="copy" value="{{ id }}" readonly style="width: 20%; text-align: center; font-size: 20px;">
+                <button onclick="copyToClipboard()">Copy</button>
+            </h2>
+
+            <h3 style="color: brown;">Please write down this ID and keep it safe in order to receive your reward. Failure to do so will result in no reward as we will not be able to identify you.</h3>
+            <br><br><br>
+            <h3>In order to start the experiment, please click <a href='/login?uniqueID={{ id }}'>here</a>.</h3>
+        </center>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log-In</title>
+    <!-- Add all relevant meta tags here -->
+    <meta name="description" content="Hermundstad-Turner 2AFC Challenge 2023">
+    <meta name="keywords" content="2AFC, HHMI Janelia, Challenge, Decision Making, Human Behavior">
+    <meta name="author" content="Tzuhsuan Ma, Rishika Mohanta, Turner Lab, Hermundstad Lab">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add all relevant links here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Add all relevant scripts here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Add all relevant stylesheets here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Add all relevant scripts here -->
+    <!-- None -->
+</head>
+<body>
+    <center>
+        <!-- Create a header div to hold the header with logo and title -->
+        <div id="header">
+            <a href="https://www.janelia.org/" target="_blank"><img src="{{ url_for('static', filename='logo.png') }}" alt="logo" id="logo" height="60px"></a>
+            <h1 id="title">Welcome to the Hermundstad-Turner 2AFC Challenge 2023</h1>
+        </div>
+        
+        <br><br><br>
+
+        <h2> Please enter your unique ID to begin the experiment. </h2>
+    
+        <form action="/login" method="POST">
+            <input placeholder="Unique ID" autocomplete="off" type="text" name="uniqueID", required style="width:40%;font-size:20px;">
+            <input type="submit" value="Connect" style="font-size:20px; width:10%;">
+        </form>
+
+        <h3> 
+            If you do not have a unique ID, please click <a href="/generateID" style="color:red;">here</a> to generate one.
+        </h3>
+
+
+        <!-- Add anchored to the bottom of the page, add a link to download the data as a CSV file -->
+        <!-- Dataset is available under CC-BY-NC-SA -->
+        <h2 style="position:absolute;bottom:2%;left:5%;width:90%;height:50pt;">
+            This dataset is made available under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:red;">CC-BY-NC-SA</a> license.<br>
+            To download the dataset as a CSV file, click  <a href="/download" style="color:red;">here</a>.
+        </h2>
+
+    </center>
+</body>
+</html>
